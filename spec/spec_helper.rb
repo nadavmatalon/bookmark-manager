@@ -1,7 +1,14 @@
 ENV["RACK_ENV"] = "test"
 
 require "./app/server.rb"
+require "./lib/link.rb"
+require "./lib/tag.rb"
+require "./lib/user.rb"
 require "database_cleaner"
+require "capybara/rspec"
+require "debugger"
+
+Capybara.app = Sinatra::Application.new
 
 RSpec.configure do |config|
 	config.before(:suite) do
