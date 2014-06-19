@@ -14,7 +14,7 @@ set :public_folder, Proc.new {File.join(root, '..', "public")}
 
 enable :sessions
 
-set :session_secret, "super secret"
+set :session_secret, "information"
 
 
 get "/" do

@@ -1,13 +1,13 @@
 require_relative "spec_helper.rb"
 # require "./spec/spec_helper.rb"
 
-feature "User signs up" do
+feature "User:" do
 
-	scenario "when being logged out" do
+	scenario "can sign up" do
 
 		lambda { sign_up }.should change(User, :count).by(1)
-		expect(page).to have_content("Welcome, alice@example.com")
-		expect(User.first.email).to eq("alice@example.com")
+		expect(page).to have_content ("Welcome alice@example.com")
+		expect(User.first.email).to eq ("alice@example.com")
 	end
 
 	def sign_up(email = "alice@example.com", password = "oranges!")
