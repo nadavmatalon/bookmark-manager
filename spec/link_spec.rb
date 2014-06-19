@@ -22,7 +22,8 @@ end
 feature "User browses the list of links" do
 
 	before(:each) {
-		Link.create(:url => "http://www.makersacademy.com", :title => "Makers Academy")
+		Link.create(:url => "http://www.makersacademy.com", :title => "Makers Academy",
+					:tags => [Tag.first_or_create(:text => 'education')])
 	}
 
 	scenario "when opening the home page" do
@@ -51,16 +52,42 @@ feature "User adds a new link" do
 		expect(link.tags.map(&:text)).to include("education")
 		expect(link.tags.map(&:text)).to include("ruby")
 	end
+end
 
-	def add_link(url, title, tags = [])		#this is a helper method - in practice the data
-											#is entered by the users in the browser
-		within('#new-link') do
-			fill_in 'url', :with => url
-			fill_in 'title', :with => title
-			fill_in 'tags', :with => tags.join(' ')
-			click_button 'Add link'
-		end
+feature "User browses the list of links" do
+
+	before(:each) {
+		Link.create(:url => "http://www.makersacademy.com", :title => "Makers Academy",
+					:tags => [Tag.first_or_create(:text => 'education')])
+
+		Link.create(:url => "http://www.google.com", :title => "Google", 
+					:tags => [Tag.first_or_create(:text => 'search')])
+
+		Link.create(:url => "http://www.bing.com", :title => "Bing",
+					:tags => [Tag.first_or_create(:text => 'search')])
+
+		Link.create(:url => "http://www.code.org", :title => "Code.org",
+					:tags => [Tag.first_or_create(:text => 'education')])
+	}
+
+	scenario "filtered by a tag" do
+		visit '/tags/search'
+		expect(page).not_to have_content("Makers Academy")
+		expect(page).not_to have_content("Code.org")
+		expect(page).to have_content("Google")
+		expect(page).to have_content("Bing")
 	end
+end
+
+def add_link(url, title, tags = [])			#this is a helper method - in practice the data
+											#is entered by the users in the browser
+	within('#new-link') do
+		fill_in 'url', :with => url
+		fill_in 'title', :with => title
+		fill_in 'tags', :with => tags.join(' ')
+		click_button 'Add link'
+	end
+	
 end
 
 
