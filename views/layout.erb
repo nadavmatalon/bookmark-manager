@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bookmark Manager</title>
+		<link href="/css/style.css" rel="stylesheet">		
+	</head>
+	<body>
+		<% if (current_user) %>
+    		<p><%= "Welcome #{current_user.email}" %></p>
+    	<% else %>
+    		<p><%= "Welcome" %></p>
+     	<% end %>
+		<%= yield %>
+	</body>
+</html>
+

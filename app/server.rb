@@ -29,7 +29,7 @@ post "/links" do
 		Tag.first_or_create(:text => tag)
 	end
 	Link.create(:url => url, :title => title, :tags => tags)
-	redirect to('/')
+	redirect to("/")
 end
 
 get "/tags/:text" do
@@ -39,13 +39,13 @@ get "/tags/:text" do
 end
 
 get "/new_user" do
-  erb :"new_user"
+	erb :"new_user"
 end
 
 post "/users" do
 	user = User.create(:email => params[:email], :password => params[:password])
 	session[:user_id] = user.id
-	redirect to('/')
+	redirect to("/")
 end
 
 def current_user    
