@@ -7,9 +7,22 @@
 	<body>
 		<% if (current_user) %>
     		<p><%= "Welcome #{current_user.email}" %></p>
+    	<% elsif flash[:notice] %>
+    		<p><%= flash[:notice] %></p>
+    	<% else %>
+    		<p><%= "Welcome" %></p>
+		<% end %>
+
+
+
+<!-- 		<% if (current_user) %>
+    		<p><%= "Welcome #{current_user.email}" %></p>
     	<% else %>
     		<p><%= "Welcome" %></p>
      	<% end %>
+     	<% if flash[:notice] %>
+     		<div id="notice"><%= flash[:notice] %></div>
+		<% end %> -->
 		<%= yield %>
 	</body>
 </html>

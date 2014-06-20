@@ -6,6 +6,7 @@ require "./lib/tag.rb"
 require "./lib/user.rb"
 require "database_cleaner"
 require "capybara/rspec"
+require "rack-flash"
 require "debugger"
 require "launchy"
 

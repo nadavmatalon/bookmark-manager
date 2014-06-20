@@ -1,5 +1,6 @@
 require "sinatra"
 require "data_mapper"
+require "rack-flash"
 require "./lib/link"
 require "./lib/tag"
 require "./lib/user"
@@ -8,6 +9,8 @@ env = ENV["RACK_ENV"] || "development"
 DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
 DataMapper.finalize
 DataMapper.auto_upgrade!
+
+use Rack::Flash
 
 set :views, Proc.new {File.join(root, '..', "views")}
 set :public_folder, Proc.new {File.join(root, '..', "public")}
@@ -39,16 +42,21 @@ get "/tags/:text" do
 end
 
 get "/new_user" do
-	erb :"new_user"
+	@user = User.new
+	erb :new_user
 end
 
 post "/users" do
-  user = User.create(:email => params[:email], :password => params[:password],
-  					 :password_confirmation => params[:password_confirmation])  
-  session[:user_id] = user.id
-  redirect to("/")
+	@user = User.new(:email => params[:email], :password => params[:password],
+					:password_confirmation => params[:password_confirmation])
+	if @user.save
+		session[:user_id] = @user.id
+		redirect to("/")
+	else
+		flash[:notice] = "Sorry, password and passoword confirmation do not match"
+		erb :new_user
+	end
 end
-
 
 def current_user    
 	@current_user ||=User.get(session[:user_id]) if session[:user_id]
