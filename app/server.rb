@@ -74,6 +74,11 @@ post "/user_sign_in" do
 	end
 end
 
+delete "/user_sign_in" do
+	flash[:notice] = "Good bye!"
+	session[:user_id] = nil
+	redirect to("/")
+end
 
 def current_user    
 	@current_user ||=User.get(session[:user_id]) if session[:user_id]
