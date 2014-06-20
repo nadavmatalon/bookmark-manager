@@ -7,6 +7,7 @@ require "./lib/user.rb"
 require "database_cleaner"
 require "capybara/rspec"
 require "debugger"
+require "launchy"
 
 Capybara.app = Sinatra::Application.new
 

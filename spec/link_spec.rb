@@ -1,6 +1,9 @@
 require_relative "spec_helper.rb"
 # require "./spec/spec_helper.rb"
 
+# save_and_open_page
+
+
 describe Link do
 
 	context "Demonstration of how datamapper works" do
