@@ -58,6 +58,21 @@ post "/users" do
 	end
 end
 
+get "/user_sign_in" do
+	erb :user_sign_in
+end
+
+post "/user_sign_in" do
+	email, password = params[:email], params[:password]
+	user = User.authenticate(email, password)
+	if user
+		session[:user_id] = user.id
+		redirect to("/")
+	else
+		flash[:errors] = ["The email or password is incorrect"]
+		erb :user_sign_in
+	end
+end
 
 
 def current_user    
