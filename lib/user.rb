@@ -7,11 +7,13 @@ class User
 
 	
 	property :id, Serial
-	property :email, String
+	property :email, String, :unique => true
 	property :password_digest, Text
 
 	attr_reader :password
 	attr_accessor :password_confirmation
+
+	validates_uniqueness_of :email  #not needed when using data_mapper
 
 	validates_confirmation_of :password
 
