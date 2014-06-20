@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Bookmark Manager</title>
-		<link href="/css/style.css" rel="stylesheet">		
-	</head>
-	<body>
-		<% if (current_user) %>
-    		<p><%= "Welcome #{current_user.email}" %></p>
-    	<% elsif flash[:notice] %>
-    		<p><%= flash[:notice] %></p>
-    	<% else %>
-    		<p><%= "Welcome" %></p>
-		<% end %>
-
-
-
-<!-- 		<% if (current_user) %>
-    		<p><%= "Welcome #{current_user.email}" %></p>
-    	<% else %>
-    		<p><%= "Welcome" %></p>
-     	<% end %>
-     	<% if flash[:notice] %>
-     		<div id="notice"><%= flash[:notice] %></div>
-		<% end %> -->
-		<%= yield %>
-	</body>
+    <head>
+        <title>Bookmark Manager</title>
+        <link rel="stylesheet" type="text/css" href="/css/application.css">  
+    </head>
+    <body>
+        <% if current_user %>
+            Welcome <%= current_user.email %>
+        <% end %>
+        <% if flash[:errors] && !flash[:errors].empty? %>
+            Sorry, there were the following problems with the form. 
+            <ul id="errors">
+                <% flash[:errors].each do |error| %>
+                    <li><%= error %></li>
+                <% end %>
+            </ul>
+        <% end %>
+        <%= yield %>
+    </body>
 </html>
 
