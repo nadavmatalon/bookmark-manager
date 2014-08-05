@@ -7,6 +7,7 @@ gem "data_mapper"
 gem "dm-postgres-adapter"
 gem "bcrypt"
 gem "rack-flash3"
+gem "thin"
 # gem "sinatra-flash"
 
 group :development, :test do

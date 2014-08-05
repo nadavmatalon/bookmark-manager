@@ -6,18 +6,20 @@
 	</head>
 	<body>
 		<h1>Bookmark Manager</h1>
+		<h3>List of links:</h3> 
 		<ul>
-  			<% @links.each do |link| %>
-    			<li><a href="<%= link.url %>"><%= link.title %></a></li>
-  			<% end %>
+		  <% @links.each do |link| %>
+		    <li><a href="<%= link.url %>"><%= link.title %></a></li>
+		  <% end %><br/>
 		</ul>
+		<h3>Add new link:</h3> 
 		<div id="new-link">
-			<form action="/links" method="post">
-				Url: <input type="text" name="url">
-				Title: <input type="text" name="title">
-				Tags: <input type="text" name="tags">
-				<input type="submit" value="Add link">
-			</form>
+  			<form action="/links" method="post">
+    			<b>Url:</b><input class="text" type="text" name="url" value="http://" onfocus="this.value = this.value;" required autofocus>
+ 	 			<b>Title:</b><input class="text" type="text" name="title" required>
+    			<b>Tags:</b><input class="text" type="text" name="tags">
+    			<input class="input" type="submit" value="Add link">
+  			</form>
 		</div>
 	</body>
 </html>

@@ -1,5 +1,4 @@
 
-
 feature "User:" do
 
 	scenario "can sign up" do
