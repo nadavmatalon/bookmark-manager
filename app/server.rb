@@ -7,7 +7,6 @@ require "./lib/user"
 
 env = ENV["RACK_ENV"] || "development"
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/bookmark_manager_#{env}")
-# DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
 DataMapper.finalize
 # DataMapper.auto_upgrade!
 
@@ -23,23 +22,36 @@ set :session_secret, "information"
 get "/" do
 	@links = Link.all
 	@links = @links.sort_by { |title| title[:title] }
+	@filtered_list = false
   erb :index
 end
 
 post "/links" do
 	url = params["url"]
 	title = params["title"]
-	tags = params["tags"].split(" ").map do |tag|
-		Tag.first_or_create(text: tag)
+	tags = params["tags"].split(",").map do |tag|
+		tag[0] = '' if tag[0] == ' '
+		if tag != ''
+			tag.capitalize!
+			Tag.first_or_create(text: tag)
+		end
 	end
+	title.capitalize! if title[0] == title[0].downcase
 	Link.create(url: url, title: title, tags: tags)
 	redirect to("/")
 end
 
 get "/tags/:text" do
-	tag = Tag.first(text: params[:text])
-	@links = tag ? tag.links : []
-	erb :index
+		tag = Tag.first(text: params[:text])
+		@links = tag ? tag.links : []
+		@links = @links.sort_by { |title| title[:title] }
+		@filtered_list = true
+		@selected_tag = tag[:text]
+		erb :index
+end
+
+get "/tags/" do
+	redirect to("/")
 end
 
 get "/users/new" do

@@ -44,10 +44,10 @@ feature "User adds a new link" do
 
 	scenario "with a few tags" do
 		visit "/"
-		add_link("http://www.makersacademy.com/", "Makers Academy", ['education', 'ruby'])
+		add_link("http://www.makersacademy.com/", "Makers Academy", ["education, ruby"])
 		link = Link.first
-		expect(link.tags.map(&:text)).to include("education")
-		expect(link.tags.map(&:text)).to include("ruby")
+		expect(link.tags.map(&:text)).to include("Education")
+		expect(link.tags.map(&:text)).to include("Ruby")
 	end
 end
 
@@ -76,15 +76,21 @@ feature "User browses the list of links" do
 	end
 end
 
-def add_link(url, title, tags = [])			#this is a helper method - in practice the data
-											#is entered by the users in the browser
+def add_link(url, title, tags = [])
+	sign_up
+	visit "/"
 	within('#new-link') do
 		fill_in 'url', :with => url
 		fill_in 'title', :with => title
 		fill_in 'tags', :with => tags.join(' ')
 		click_button 'Add link'
 	end
-	
 end
 
-
+def sign_up
+	visit "/users/new"
+	fill_in :email, with: "alice@example.com"
+	fill_in :password, with: "apple"
+	fill_in :password_confirmation, with: "apple"
+	click_button "Register"
+end
