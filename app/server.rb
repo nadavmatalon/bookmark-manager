@@ -41,9 +41,9 @@ get "/tags/:text" do
 	erb :index
 end
 
-get "/new_user" do
+get "/users/new" do
 	@user = User.new
-	erb :new_user
+	erb :"/users/new"
 end
 
 post "/users" do
@@ -74,10 +74,32 @@ post "/user_sign_in" do
 	end
 end
 
-delete "/user_sign_in" do
+# delete "/user_sign_in" do
+# 	flash[:notice] = "Good bye!"
+# 	session[:user_id] = nil
+# 	redirect to("/")
+# end
+
+delete "/sessions" do
 	flash[:notice] = "Good bye!"
 	session[:user_id] = nil
 	redirect to("/")
+end
+
+get '/sessions/new' do
+  erb :"sessions/new"
+end
+
+post '/sessions' do
+	email, password = params[:email], params[:password]
+	user = User.authenticate(email, password)
+  	if user
+    	session[:user_id] = user.id
+    	redirect to('/')
+  	else
+    	flash[:errors] = ["The email or password is incorrect"]
+    	erb :"sessions/new"
+  	end
 end
 
 def current_user    

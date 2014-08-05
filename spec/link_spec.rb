@@ -8,7 +8,6 @@ describe Link do
 			Link.create(:title => "Makers Academy", :url => "http://www.makersacademy.com/")
 			expect(Link.count).to eq(1)
 			link = Link.first
-			# debugger
 			expect(link.url).to eq("http://www.makersacademy.com/")
 			expect(link.title).to eq("Makers Academy")
 			link.destroy

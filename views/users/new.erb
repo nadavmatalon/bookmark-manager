@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bookmark Manager</title>
+		<link href="/css/style.css" rel="stylesheet">		
+	</head>
+	<body>
+		<h3>User Sign up</h3>
+		<form action="/users" method="post">
+			Email: <input name="email" type="text" value="<%= @user.email %>">
+			Password: <input name="password" type="password">
+			Re-enter Password: <input name="password_confirmation" type="password">
+			<input type="submit" value="Register">
+		</form>
+	</body>
+</html>

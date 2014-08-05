@@ -2,6 +2,7 @@
 feature "User:" do
 
 	scenario "can sign up" do
+
 		lambda { sign_up }.should change(User, :count).by(1)
 		expect(page).to have_content ("Welcome alice@example.com")
 		expect(User.first.email).to eq ("alice@example.com")
@@ -20,13 +21,13 @@ feature "User:" do
 	end
 
 	def sign_up(email = "alice@example.com", password = "apple", password_confirmation = "apple")
-		visit "/new_user"
+		visit "/users/new"
 		expect(page.status_code).to eq(200)
 		fill_in :email, :with => email
 		fill_in :password, :with => password
 		fill_in :password_confirmation, :with => password_confirmation
 		click_button "Register"
-  end
+  	end
 
 end
 
