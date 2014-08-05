@@ -14,4 +14,3 @@ task :auto_migrate do
 end
 
 # type: "rake auto_migrate" in terminal
-

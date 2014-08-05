@@ -23,9 +23,9 @@ feature "User:" do
 	def sign_up(email = "alice@example.com", password = "apple", password_confirmation = "apple")
 		visit "/users/new"
 		expect(page.status_code).to eq(200)
-		fill_in :email, :with => email
-		fill_in :password, :with => password
-		fill_in :password_confirmation, :with => password_confirmation
+		fill_in :email, with: email
+		fill_in :password, with: password
+		fill_in :password_confirmation, with: password_confirmation
 		click_button "Register"
   	end
 
@@ -35,8 +35,8 @@ feature "User signs in" do
 
 	before(:each) do
 
-		User.create(:email => "test@test.com", :password => "test",
-					:password_confirmation => "test")
+		User.create(email: "test@test.com", password: "test",
+					password_confirmation: "test")
 	end
 
 	scenario "with correct credentials" do
@@ -54,9 +54,9 @@ feature "User signs in" do
 	end
 
 	def sign_in(email, password)
-		visit "/user_sign_in"
-		fill_in "email", :with => email
-		fill_in "password", :with => password
+		visit "/sessions/new"
+		fill_in "email", with: email
+		fill_in "password", with: password
 		click_button "Sign In"
 	end
 
@@ -66,21 +66,21 @@ end
 feature "User signs out" do
 
 	before(:each) do
-		User.create(:email => "test@test.com", :password => "test",
-					:password_confirmation => "test")
+		User.create(email: "test@test.com", password: "test",
+					password_confirmation: "test")
 	end
 
 	scenario "while being signed in" do
 		sign_in("test@test.com", "test")
 		click_button "Sign out"
-		expect(page).to have_content("Good bye!")
+		expect(page).to have_content("Bye for now test@test.com, thanks for visiting!")
 		expect(page).not_to have_content("Welcome test@test.com")
 	end
 
 	def sign_in(email, password)
-		visit "/user_sign_in"
-		fill_in "email", :with => email
-		fill_in "password", :with => password
+		visit "/sessions/new"
+		fill_in "email", with: email
+		fill_in "password", with: password
 		click_button "Sign In"
 	end
 
