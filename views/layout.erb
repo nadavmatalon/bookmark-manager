@@ -54,20 +54,23 @@
 
         </div>
 
-        <div class="add-link">
- 
-            <% if current_user %>     
-                <h3>Add a new link:</h3> 
-                <div id="new-link">
-                    <form action="/links" method="post">
-                        <strong>Url:</strong><input class="text" type="text" name="url" value="http://" onfocus="this.value = this.value;" required autofocus>
-                        <strong>Title:</strong><input class="text" type="text" name="title" required>
-                        <strong>Tags:</strong><input class="text" type="text" name="tags">
-                        <input class="input" type="submit" value="Add link">
-                    </form>
-                </div>
-            <% end %> 
-
+        <div class="new-link-container">
+            <div class="seperator"></div>
+            <div class="new-link">
+                <% if current_user %>     
+                    <p>Add a new bookmark</p> 
+                    <div id="new-link">
+                        <form action="/links" method="post">
+                            <span class="new-link-header">Url:</span><input class="text text-box" type="text" name="url" value="http://" onfocus="this.value = this.value;" required autofocus>
+                            <span class="new-link-header">Title:</span><input class="text text-box" type="text" name="title" required>
+                            <span class="new-link-header">Tags:</span><input class="text text-box" type="text" name="tags">
+                            <input class="input new-link-button" type="submit" value="Add link">
+                        </form>
+                    </div>
+                <% else %>
+                    <p class="new-link-message">Please sign-up or sign-in to add new bookmarks</p>
+                <% end %> 
+            </div>
         </div>
  
         <div class="main-section">

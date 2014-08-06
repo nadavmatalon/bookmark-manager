@@ -1,27 +1,34 @@
-<div class="link-list"
-	<% if @filtered_list %>
-		<h3>List of saved links for '<%= @selected_tag %>' tag:</h3>
-	<% else %>
-		<h3>List of saved links:</h3> 
+<div class="link-list">
+
+	<% if @filtered_list %>	
+		<div class="new-link all-links">
+			<p>Bookmarks with '<%= @selected_tag %>' tag:</p>
+			<div class="show-all-links-button-container">
+				<a href='/' id='show-all-links' class='show-all-links-button'>Show all links</a>
+			</div>
+		</div>
+		<div class="seperator">
+		</div>
 	<% end%>
+
 	<% if @links != [] && @links != nil %>
-		<ul>
-		  	<% @links.each do |link| %>
-		    	<li>
-		    		<a href="<%= link.url %>"><%= link.title %></a>
-					<% if link.tags != [] %>
-						<% link.tags.each do |tag| %>
-							<span><a href=<%= "/tags/#{tag[:text]}" %>> [<%= tag[:text] %>]</a></span>
-						<% end%>	
-					<% end %>
-		    	</li>
-	  		<% end %><br/>
-		</ul>
-	<% else %>
-			<p>No links yet</p>
+
+	  	<% @links.each do |link| %>
+
+			<div class="new-link">
+
+		    	<a href="<%= link.url %>"><%= link.title %></a>
+				<% if link.tags != [] %>
+					<% link.tags.each do |tag| %>
+						<span><a href=<%= "/tags/#{tag[:text]}" %>> [<%= tag[:text] %>]</a></span>
+					<% end%>	
+				<% end %>
+			</div>
+
+			<div class="seperator">
+			</div>
+
+		<% end %>
 	<% end %>
-	<%if @filtered_list %>
-		<a href='/' id='all-links' class='button'>Show all links</a>
-	<% end %> 
 </div>
 

@@ -92,18 +92,103 @@ div {
 	margin-top: -1px;
 }
 
-.add-link {
+.new-link-container {
 	width: 100%;
-	height: 100px;
+	height: 140px;
 	background-color: rgb(215, 215, 215);
 }
 
+.seperator {
+	width: 100%;
+	height: 25px;
+	min-width: 50%;
+	width: 65%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: rgb(215, 215, 215);
+}
+
+.new-link {
+	background-color: rgb(180, 180, 180);
+	min-width: 50%;
+	width: 68%;
+	height: 90px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;	
+	border: 1px solid rgb(100, 100, 100);
+	border-radius: 5px;
+}
+
+.new-link > p {
+	color: blue;
+	font-size: 1.5em;
+	padding-top: 10px;
+	padding-bottom: 14px;
+}
+
+.new-link-header {
+	font-size: 1.2em;
+	margin-right: 9px;
+	margin-left: 10px;
+}
+
+.text-box {
+	width: 180px;
+	height: 20px;
+	font-size: 1em;
+	outline: none;
+}
+
+.new-link-button {
+	margin-left: 11px;
+	font-size: 0.9em;
+	width: 80px;
+	height: 19px;
+	box-sizing: initial;
+	border-radius: 6px;
+	border-width: 1px;
+	border-style: solid;
+	border: 1px solid rgb(100, 100, 100);
+}
+
+.new-link-button:hover {
+	color: blue;
+}
+
+.new-link-message {
+	margin-top: 22px;
+}
 .main-section {
 	width: 100%;
 	min-height: 470px;
 	background-color: rgb(200, 200, 200);
 }
 
+.all-links {
+	background-color: rgb(210, 210, 210);
+}
+
+.show-all-links-button-container{
+	margin-top: 10px;
+}
+
+#show-all-links {
+	color: black;
+	text-decoration: none;
+	border: 1px solid rgb(100, 100, 100);
+	border-radius: 5px;
+	background-color: silver;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 1.05em;
+}
+
+#show-all-links:hover {
+	color: blue;
+}
 
 .link-list {
 
