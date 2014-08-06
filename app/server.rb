@@ -67,7 +67,7 @@ post "/users" do
 		redirect to("/")
 	else
 		flash.now[:errors] = @user.errors.full_messages
-		erb :new_user
+		erb :"users/new"
 	end
 end
 

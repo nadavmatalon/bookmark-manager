@@ -1,45 +1,27 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Bookmark Manager</title>
-		<link href="/css/style.css" rel="stylesheet">		
-	</head>
-	<body>
-		<% if current_user %>	  
-			<h3>Add a new link:</h3> 
-			<div id="new-link">
-	  			<form action="/links" method="post">
-	    			<strong>Url:</strong><input class="text" type="text" name="url" value="http://" onfocus="this.value = this.value;" required autofocus>
-	 	 			<strong>Title:</strong><input class="text" type="text" name="title" required>
-	    			<strong>Tags:</strong><input class="text" type="text" name="tags">
-	    			<input class="input" type="submit" value="Add link">
-	  			</form>
-			</div>
-		<% end %>
-		<% if @filtered_list %>
-			<h3>List of saved links for '<%= @selected_tag %>' tag:</h3>
-		<% else %>
-			<h3>List of saved links:</h3> 
-		<% end%>
-		<% if @links != [] && @links != nil %>
-			<ul>
-			  	<% @links.each do |link| %>
-			    	<li>
-			    		<a href="<%= link.url %>"><%= link.title %></a>
-						<% if link.tags != [] %>
-							<% link.tags.each do |tag| %>
-								<span><a href=<%= "/tags/#{tag[:text]}" %>> [<%= tag[:text] %>]</a></span>
-							<% end%>	
-						<% end %>
-			    	</li>
-		  		<% end %><br/>
-			</ul>
-		<% else %>
-				<p>No links yet</p>
-		<% end %>
-		<%if @filtered_list %>
-			<a href='/' id='all-links' class='button'>Show all links</a>
-		<% end %> 
-	</body>
-</html>
+<div class="link-list"
+	<% if @filtered_list %>
+		<h3>List of saved links for '<%= @selected_tag %>' tag:</h3>
+	<% else %>
+		<h3>List of saved links:</h3> 
+	<% end%>
+	<% if @links != [] && @links != nil %>
+		<ul>
+		  	<% @links.each do |link| %>
+		    	<li>
+		    		<a href="<%= link.url %>"><%= link.title %></a>
+					<% if link.tags != [] %>
+						<% link.tags.each do |tag| %>
+							<span><a href=<%= "/tags/#{tag[:text]}" %>> [<%= tag[:text] %>]</a></span>
+						<% end%>	
+					<% end %>
+		    	</li>
+	  		<% end %><br/>
+		</ul>
+	<% else %>
+			<p>No links yet</p>
+	<% end %>
+	<%if @filtered_list %>
+		<a href='/' id='all-links' class='button'>Show all links</a>
+	<% end %> 
+</div>
 
