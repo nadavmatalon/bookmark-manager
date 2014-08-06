@@ -133,6 +133,25 @@ div {
 	padding-bottom: 14px;
 }
 
+#filter-title {
+	color: rgb(209, 113, 50);
+}
+
+#tag-title {
+	color: purple;
+	text-decoration: none;
+	border: 1px solid rgb(100, 100, 100);
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin-left: 4px;
+	margin-right: 4px;
+	border-radius: 3px;
+	background-color: silver;
+	font-size: 0.8em;
+}
+
 .new-link-header {
 	font-size: 1.2em;
 	margin-right: 9px;
@@ -224,8 +243,8 @@ div {
 	background-color: silver;
 	padding-left: 10px;
 	padding-right: 10px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 4px;
+	padding-bottom: 4px;
 	font-size: 1.05em;
 }
 
