@@ -1,6 +1,8 @@
 body {
 	background-color: black;
 	color: whitesmoke;
+	height: 100%;
+
 }
 
 div {
@@ -77,6 +79,8 @@ div {
 	font-size: 1.05em;
 	text-decoration: none;
 	color: whitesmoke;
+	clear: left;
+	text-align: center;
 }
 
 .nav-button:hover{
@@ -91,8 +95,15 @@ div {
 	font-size: 1.05em;
 	font-family: Times New Roman;
 	margin-top: -1px;
+	margin-left: 15px;
+	clear: left;
 }
 
+
+#home {
+	margin-left: 10px;
+	clear: left
+}
 
 #sign-out:hover {
 	color: orange;
@@ -116,7 +127,7 @@ div {
 
 .new-link {
 	background-color: rgb(180, 180, 180);
-	min-width: 50%;
+	min-width: 68%;
 	width: 68%;
 	height: 90px;
 	margin-right: auto;
@@ -223,7 +234,7 @@ div {
 }
 .main-section {
 	width: 100%;
-	min-height: 470px;
+	min-height: 570px;
 	/*background-color: rgb(200, 200, 200);*/
 }
 
