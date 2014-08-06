@@ -1,8 +1,13 @@
-
-<h3>User Sign up</h3>
-<form action="/users" method="post">
-	Email: <input name="email" type="text" value="<%= @user.email %>" required autofocus>
-	Password: <input name="password" type="password" required>
-	Confirm Password: <input name="password_confirmation" type="password" required>
-	<input type="submit" value="Register">
-</form>
+<div class="new-link-container">
+	<div class="seperator">
+	</div>
+	<div class="sign-up-container new-link">
+		<p>Please sign up</p>
+			<form action="/users" method="post">
+				<input type="text" name='email' value="<%= @user.email %>" placeholder="Email" class="sign-up-text-box text-box" required autofocus>
+				<input type="password" name='password' placeholder="Password" class="sign-up-text-box text-box" required>
+				<input type="password" name='password_confirmation' placeholder="Password Confirmation" class="sign-up-text-box text-box" required>
+			<input type="submit" class="new-link-button" value="Register">
+		</form>
+	</div>
+</div>

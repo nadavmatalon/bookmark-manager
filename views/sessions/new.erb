@@ -1,8 +1,14 @@
 
-<h3>User Sign In</h3>
-<form action="/sessions" method="post">
-		Email: <input type="text" name='email' required autofocus>
-		Password: <input type="password" name='password'required>
-	<input type="submit" value="Sign In">
-</form>
+<div class="new-link-container">
+	<div class="seperator">
+	</div>
+	<div class="sign-in-container new-link">
+		<p>Please sign in</p>
+		<form action="/sessions" method="post">
+				<input type="text" name='email' placeholder="Email" class="sign-in-text-box text-box" required autofocus>
+				<input type="password" name='password' placeholder="Password" class="sign-in-text-box text-box" required>
+			<input type="submit" class="new-link-button" value="Sign In">
+		</form>
+	</div>
+</div>
 

@@ -137,6 +137,7 @@ div {
 	font-size: 1.2em;
 	margin-right: 9px;
 	margin-left: 10px;
+	color: black;
 }
 
 .text-box {
@@ -144,6 +145,42 @@ div {
 	height: 20px;
 	font-size: 1em;
 	outline: none;
+	border: 1px solid rgb(100, 100, 100);
+}
+
+.sign-in-text-box {
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-left: 5px;
+}
+
+.sign-up-text-box {
+	width: 200px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-left: 5px;
+}
+
+.sign-in-container {
+	height: 164px;
+	width: 50%;
+}
+
+.sign-in-container > p {
+	padding-top: 37px;
+	padding-bottom: 32px;
+	font-size: 1.8em;
+}
+
+.sign-up-container {
+	height: 164px;
+	width: 65%;
+}
+
+.sign-up-container > p {
+	padding-top: 37px;
+	padding-bottom: 32px;
+	font-size: 1.8em;
 }
 
 .new-link-button {
