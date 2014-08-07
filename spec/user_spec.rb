@@ -17,7 +17,7 @@ feature "User" do
 	scenario "cannot sign up with an email that\'s already taken" do
 		register_user
 		lambda { sign_up }.should change(User, :count).by(0)
-		expect(page).to have_content("This email is already taken")
+		expect(page).to have_content("Sorry, this email is already taken")
 	end
 
 	scenario "can sign in with correct credentials" do
@@ -43,33 +43,5 @@ feature "User" do
 		expect(page).to have_content("Bye for now test@example.com, thanks for visiting!")
 		expect(page).not_to have_content("Welcome test@example.com")
 	end
-end
-
-
-def register_user
-	sign_up
-	sign_out
-end
-
-def sign_up(email = "test@example.com", password = "password", 
-			password_confirmation = "password")
-	visit "/"
-	click_link "Sign up"
-	fill_in :email, with: email
-	fill_in :password, with: password
-	fill_in :password_confirmation, with: password_confirmation
-	click_button "Register"
-end
-
-def sign_in(email = "test@example.com", password = "password")
-	visit "/sessions/new"
-	fill_in "email", with: email
-	fill_in "password", with: password
-	click_button "Sign In"
-end
-
-def sign_out
-	visit "/"
-	click_button "Sign out"
 end
 
