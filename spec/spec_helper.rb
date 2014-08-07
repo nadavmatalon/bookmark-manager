@@ -31,21 +31,19 @@ def create_tag(text="tag")
 	Tag.create(text: text)
 end
 
-def create_link(title="title", url="http://www.example.com", 
+def create_link(url="http://www.example.com", title="title",
 				tags=[create_tag("tag_one"),
 					  create_tag("tag_two")])
-	link = Link.create(title: title, url: url, tags: tags)
+	link = Link.create(url: url, title: title, tags: tags)
 end
 
-def add_link(url, title, tags = [])
-	sign_up
-	visit "/"
+def add_link (url, title, tags)
 	within('#new-link') do
-		fill_in 'url', :with => url
-		fill_in 'title', :with => title
-		fill_in 'tags', :with => tags.join(' ')
-		click_button 'Add link'
-	end
+		fill_in 'url', with: url
+		fill_in 'title', with: title
+		fill_in 'tags', with: tags
+	end	
+	click_button 'Add link'	
 end
 
 def register_user

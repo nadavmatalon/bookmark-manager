@@ -27,7 +27,7 @@
 				tag:
 			</p>
 			<div class="show-all-links-button-container">
-				<a href='/' id='show-all-links' class='show-all-links-button'>Show all links</a>
+				<a href='/' id='show-all-links' class='show-all-links-button'>Show all</a>
 			</div>
 		</div>
 		<div class="seperator">
@@ -42,7 +42,8 @@
 
 		    	<p class="saved-link-title-margin link-title"><a href="<%= link.url %>"><%= link.title %></a></p>
 				<% if link.tags != [] %>
-					<% link.tags.each do |tag| %>
+					<% @tags_array = link.tags.sort_by {|tag| tag.text } %>
+						<% @tags_array.each do |tag| %>
 						<span class="tag"><a href=<%= "/tags/#{tag[:text]}" %>><%= tag[:text] %></a></span>
 					<% end%>	
 				<% end %>
