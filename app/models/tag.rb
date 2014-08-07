@@ -11,4 +11,3 @@ class Tag
 
 	validates_uniqueness_of :text
 end
-

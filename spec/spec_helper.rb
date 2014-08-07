@@ -1,15 +1,12 @@
 ENV["RACK_ENV"] = "test"
 
 require "./app/server.rb"
-require "./lib/link.rb"
-require "./lib/tag.rb"
-require "./lib/user.rb"
+require "helpers/session.rb"
 require "database_cleaner"
 require "capybara/rspec"
 require "rack-flash"
 require "debugger"
 require "launchy"
-require "helpers/session.rb"
 
 include SessionHelpers
 

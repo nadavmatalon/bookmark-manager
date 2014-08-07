@@ -7,7 +7,6 @@ class User
 	
 	property :id, Serial
 
-	# property :email, String, unique: true, message: "Sorry, this email is already taken"
 	property :email, String, required: true, unique: true, format: :email_address,
     		 				 messages: {
       							presence: "Sorry, email is required",
@@ -39,6 +38,5 @@ class User
 			nil
 		end
 	end
-
 end
 
