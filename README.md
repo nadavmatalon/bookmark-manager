@@ -7,7 +7,7 @@ to create a list of links to multiple websites (bookmarks) a categorize them acc
 type or content via tags.</p>
 
 <p>At the heart of the app is a postgresql database. The app itself was created as an exercise 
-in buiding a fully functional Sinatra web application whilte using TDD. As such, the app 
+in buiding a fully functional Sinatra web application while using TDD. As such, the app 
 comes with a comprehensive testing suite with integration and feature tests for all models 
 and webpages.</p> 
 
