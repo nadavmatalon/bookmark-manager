@@ -25,9 +25,7 @@
 
                 <% if flash[:errors] && !flash[:errors].empty? %>
                     <div class="errors">
-                        <% flash[:errors].each do |error| %>
-                            <p><%= error %></p>
-                        <% end %>
+                        <p><%= flash[:errors].first %></p>
                     </div>
                 <% end %>
  
@@ -54,8 +52,6 @@
 
         </div>
 
- 
- 
         <div class="main-section">
     
             <%= yield %>

@@ -14,6 +14,17 @@ feature "User" do
 		expect(page).to have_content("Password does not match the confirmation")
 	end
 
+	scenario "cannot sign up with a password that is less than 6 chars" do
+		lambda { sign_up('test@example.com', 'pass', 'pass') }.should change(User, :count).by(0) 
+		expect(current_path).to eq('/users')
+		expect(page).to have_content("Password must be at least 6 characters long")
+	end
+
+	scenario "cannot sign up with an email that\'s not correctly formatted" do
+		lambda { sign_up('test', 'password', 'password') }.should change(User, :count).by(0) 
+		expect(page).to have_content("Sorry, email is not formatted correctly")
+	end
+
 	scenario "cannot sign up with an email that\'s already taken" do
 		register_user
 		lambda { sign_up }.should change(User, :count).by(0)

@@ -6,13 +6,23 @@ class User
 	include DataMapper::Resource
 	
 	property :id, Serial
-	property :email, String, unique: true, message: "Sorry, this email is already taken"
+
+	# property :email, String, unique: true, message: "Sorry, this email is already taken"
+	property :email, String, required: true, unique: true, format: :email_address,
+    		 				 messages: {
+      							presence: "Sorry, email is required",
+      							is_unique: "Sorry, this email is already taken",
+      							format: "Sorry, email is not formatted correctly"
+    						}
+
 	property :password_digest, Text
 
 	attr_reader :password
 	attr_accessor :password_confirmation
 
 	validates_uniqueness_of :email 
+
+	validates_length_of :password, min: 6
 
 	validates_confirmation_of :password
 	
