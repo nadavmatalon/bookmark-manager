@@ -1,90 +1,75 @@
+require "spec_helper.rb"
 
-feature "User:" do
+feature "User" do
 
 	scenario "can sign up" do
-
 		lambda { sign_up }.should change(User, :count).by(1)
-		expect(page).to have_content ("Welcome alice@example.com")
-		expect(User.first.email).to eq ("alice@example.com")
+		expect(page).to have_content ("Welcome test@example.com")
+		expect(User.first.email).to eq ("test@example.com")
 	end
 
-	scenario "cannot register with a password that doesn't match" do
-		lambda { sign_up('a@a.com', 'pass', 'wrong') }.should change(User, :count).by(0) 
+	scenario "cannot sign up with a password that doesn\'t match" do
+		lambda { sign_up('test@example.com', 'right', 'wrong') }.should change(User, :count).by(0) 
 		expect(current_path).to eq('/users')
 		expect(page).to have_content("Password does not match the confirmation")
 	end
 
-	scenario "with an email that is already registered" do
-		lambda { sign_up }.should change(User, :count).by(1)
+	scenario "cannot sign up with an email that\'s already taken" do
+		register_user
 		lambda { sign_up }.should change(User, :count).by(0)
 		expect(page).to have_content("This email is already taken")
 	end
 
-	def sign_up(email = "alice@example.com", password = "apple", password_confirmation = "apple")
-		visit "/users/new"
-		expect(page.status_code).to eq(200)
-		fill_in :email, with: email
-		fill_in :password, with: password
-		fill_in :password_confirmation, with: password_confirmation
-		click_button "Register"
-  	end
-
-end
-
-feature "User signs in" do
-
-	before(:each) do
-
-		User.create(email: "test@test.com", password: "test",
-					password_confirmation: "test")
+	scenario "can sign in with correct credentials" do
+		register_user
+		sign_in
+		expect(page).to have_content("Welcome test@example.com")
 	end
 
-	scenario "with correct credentials" do
-		visit "/"
-		expect(page).not_to have_content("Welcome test@test.com")
-		sign_in("test@test.com", "test")
-		expect(page).to have_content("Welcome test@test.com")
+	scenario "cannot sign in with incorrect email" do
+		register_user
+		sign_in("wrong@example.com", "password")
+		expect(page).to have_content("email or password are incorrect")
 	end
 
-	scenario "with incorrect credentials" do
-		visit "/"
-		expect(page).not_to have_content("Welcome test@test.com")
-		sign_in("test@test.com", "wrong")
-		expect(page).not_to have_content("Welcome test@test.com")
+	scenario "cannot sign in with incorrect password" do
+		register_user
+		sign_in("test@example.com", "wrong")
+		expect(page).to have_content("email or password are incorrect")
 	end
 
-	def sign_in(email, password)
-		visit "/sessions/new"
-		fill_in "email", with: email
-		fill_in "password", with: password
-		click_button "Sign In"
+	scenario "can sign out if already signed in" do
+		register_user
+		expect(page).to have_content("Bye for now test@example.com, thanks for visiting!")
+		expect(page).not_to have_content("Welcome test@example.com")
 	end
-
 end
 
 
-feature "User signs out" do
-
-	before(:each) do
-		User.create(email: "test@test.com", password: "test",
-					password_confirmation: "test")
-	end
-
-	scenario "while being signed in" do
-		sign_in("test@test.com", "test")
-		click_button "Sign out"
-		expect(page).to have_content("Bye for now test@test.com, thanks for visiting!")
-		expect(page).not_to have_content("Welcome test@test.com")
-	end
-
-	def sign_in(email, password)
-		visit "/sessions/new"
-		fill_in "email", with: email
-		fill_in "password", with: password
-		click_button "Sign In"
-	end
-
+def register_user
+	sign_up
+	sign_out
 end
 
+def sign_up(email = "test@example.com", password = "password", 
+			password_confirmation = "password")
+	visit "/"
+	click_link "Sign up"
+	fill_in :email, with: email
+	fill_in :password, with: password
+	fill_in :password_confirmation, with: password_confirmation
+	click_button "Register"
+end
 
+def sign_in(email = "test@example.com", password = "password")
+	visit "/sessions/new"
+	fill_in "email", with: email
+	fill_in "password", with: password
+	click_button "Sign In"
+end
+
+def sign_out
+	visit "/"
+	click_button "Sign out"
+end
 
