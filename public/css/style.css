@@ -2,7 +2,10 @@ body {
 	background-color: black;
 	color: whitesmoke;
 	height: 100%;
-
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: -moz-box;
+  	display: flex;
 }
 
 div {
@@ -11,6 +14,14 @@ div {
 
 .nav-bar {
 	display: flex;
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: -moz-box-flex;
+  	-moz-box-orient: horizontal;
+	-moz-box-direction: normal;
+	flex-direction: row;
 	width: 100%;
 	height: 54px;
 	background-color: rgb(75, 75, 75);
@@ -70,6 +81,11 @@ div {
 
 .nav-buttons {
 	display: flex;
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: -moz-box-flex;
 	float: right;
 	min-width: 18%;
 	height: 54px;
@@ -311,6 +327,11 @@ div {
 	background-color: rgb(75, 75, 75);
 	border-top: 1px solid rgb(100, 100, 100);
 	display: flex;
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: -moz-box-flex;
 	position:fixed;
    	left:0px;
    	bottom:0px;
@@ -318,6 +339,14 @@ div {
 
 .footer-container {
 	display: flex;
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: -moz-box-flex;
+  	-moz-box-orient: horizontal;
+	-moz-box-direction: normal;
+	flex-direction: row;
 	width: 94%;
 	height: 90px;
 	margin-left: auto;
@@ -330,6 +359,11 @@ div {
 	vertical-align: top;
 	height: 90px;
 	display: flex;
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: -moz-box-flex;
 	padding-left: 50px;
 }
 
@@ -349,6 +383,11 @@ div {
 	vertical-align: top;
 	height: 90px;
 	display: flex;
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: -moz-box-flex;
 }
 
 .written-by > p {
@@ -370,6 +409,11 @@ div {
 
 .images-container {
 	display: flex;
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: -moz-box-flex;
 	width: 60%;
 	height: 90px;
 }
@@ -384,6 +428,11 @@ div {
 	margin-right: auto;
 	margin-left: auto;
 	display: flex;
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: -moz-box-flex;
 }
 
 
