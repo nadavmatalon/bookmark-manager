@@ -4,6 +4,8 @@ ruby '2.1.1'
 
 # https://github.com/sinatra/sinatra
 gem "sinatra"
+# https://github.com/yb66/Sinatra-Partial
+gem 'sinatra-partial'
 # https://github.com/datamapper/data_mapper
 gem "data_mapper"
 # https://github.com/datamapper/dm-postgres-adapter

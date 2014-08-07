@@ -1,0 +1,38 @@
+<div class="nav-bar">
+    <div class="logo">
+        <p>Bookmark Manager</p>
+    </div>
+    <div class="user-message">
+        <% if current_user %>
+            <p>Welcome <%= current_user.email %></p>
+        <% else %> 
+            <p>Welcome Guest</p>
+        <% end %>
+    </div>
+    <div class="system-message">
+        <% if flash[:errors] && !flash[:errors].empty? %>
+            <div class="errors">
+                <p><%= flash[:errors].first %></p>
+            </div>
+        <% end %>
+
+        <% if flash[:notice] %>
+            <div class="notices">
+                <p><%= flash[:notice] %></p>
+            </div>
+        <% end %>                 
+    </div>
+    <div class="nav-buttons">
+        <% if current_user %>
+            <form id="sign-out" method="post" action="/sessions" class="link-form">
+                <input type="hidden" name="_method" value="delete">
+                <input type="submit" id="sign-out" class="nav-button" value="Sign out">
+            </form>
+        <% else %> 
+            <a href='/users/new' id='sign-up' class='nav-button'>Sign up</a>
+            <a href='/sessions/new' id='sign-in' class='nav-button'>Sign in</a>      
+        <% end %>
+        <a href='/' id='home' class='nav-button'>Home</a>                
+    </div>
+</div>
+

@@ -1,4 +1,5 @@
 require "sinatra"
+require 'sinatra/partial'
 require "data_mapper"
 require "rack-flash"
 
@@ -27,4 +28,6 @@ set :public_folder, Proc.new {File.join(root, '..', "public")}
 enable :sessions
 
 set :session_secret, "information"
+
+set :partial_template_engine, :erb
 
