@@ -54,7 +54,6 @@ feature "Link (aka Bookmark)" do
 		expect(page).not_to have_content "Yahoo Search Amazon Books Google Search"
 		expect(page).to have_content "Amazon Books Google Search Yahoo Search"
 	end
-
 end
 
 
