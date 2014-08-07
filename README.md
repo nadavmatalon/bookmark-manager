@@ -1,6 +1,6 @@
 <h1>Bookmark Manager</h1>
 
-<h3>Description</h3>
+<h3>Description</h3><br/>
 
 <p><strong>Bookmark Manager</strong> is a simple Sinatra web application that allows users 
 to create a list of links to multiple websites (bookmarks) a categorize them according to 
@@ -28,14 +28,14 @@ to a specific tag. Both the list itself and the tags are ordered alphabetically.
 the bottom.</p>
 
 
-<h3>Browser Caveate</h3>
+<h3>Browser Caveate</h3><br/>
 
-</p>Please note that this app has been optimized primarily for <strong>Google Chrome</strong>, 
+<p>Please note that this app has been optimized primarily for <strong>Google Chrome</strong>, 
 and uses flexbox to display various element. Consequently, and despite my efforts to 
 make it suitable for other browsers, it may not look as intended on other browsers.</p>
 
 
-<h3>Testing</h3>
+<h3>Testing</h3><br/>
 
 <p>Tests were written with Rspec & Capybara.</p>
 
