@@ -402,9 +402,12 @@ div {
 
 .avatar-container {
 	align-self: center;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 .avatar-box {
+
 }
 
 .images-container {
@@ -422,6 +425,8 @@ div {
 	align-self: center;
 	margin-right: auto;
 	margin-left: auto;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 .image-box img {
