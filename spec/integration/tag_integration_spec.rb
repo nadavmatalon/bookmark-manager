@@ -1,5 +1,3 @@
-require "spec_helper.rb"
-
 feature "Tag" do
 	
 	it 'can be created and saved in the database' do

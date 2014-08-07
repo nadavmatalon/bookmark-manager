@@ -1,5 +1,3 @@
-require "spec_helper.rb"
-
 feature "Tag" do
 	
 	it 'is capitalized when added to a new bookmark' do

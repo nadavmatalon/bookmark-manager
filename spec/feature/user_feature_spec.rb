@@ -1,5 +1,3 @@
-require "spec_helper.rb"
-
 feature "User" do
 
 	scenario "can sign up" do
@@ -23,7 +21,6 @@ feature "User" do
 		expect(page).not_to have_button "Sign up"
 		expect(page).not_to have_button "Sign in"
 	end
-
 
 	scenario "does not have the option to sign up or sign in after signing up" do
 		sign_up

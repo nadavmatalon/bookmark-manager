@@ -1,6 +1,4 @@
-require "spec_helper.rb"
-
-feature "Link (aka Bookmark)" do
+feature "Bookmark (Link)" do
 
 	before(:each) do
 		sign_up

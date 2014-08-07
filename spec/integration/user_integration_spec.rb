@@ -1,6 +1,4 @@
-require "spec_helper.rb"
-
-describe User do
+describe "User" do
 
 	it 'can be created and saved in the database' do
 		expect(User.count).to eq(0)

@@ -1,6 +1,4 @@
-require "spec_helper.rb"
-
-describe Link do
+describe "Bookmark (Link)" do
 
 	it 'can be created and saved in the database' do
 		expect(Link.count).to eq(0)
