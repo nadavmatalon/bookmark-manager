@@ -130,14 +130,17 @@ div {
 
 .new-link {
 	background-color: rgb(180, 180, 180);
-	min-width: 68%;
-	width: 68%;
+	width: 900px;
 	height: 90px;
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;	
 	border: 1px solid rgb(100, 100, 100);
 	border-radius: 5px;
+}
+
+.link-form {
+	margin-right: 16px;
 }
 
 .new-link > p {

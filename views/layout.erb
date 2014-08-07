@@ -41,7 +41,7 @@
 
             <div class="nav-buttons">
                 <% if current_user %>
-                    <form id="sign-out" method="post" action="/sessions">
+                    <form id="sign-out" method="post" action="/sessions" class="link-form">
                         <input type="hidden" name="_method" value="delete">
                         <input type="submit" id="sign-out" class="nav-button" value="Sign out">
                     </form>

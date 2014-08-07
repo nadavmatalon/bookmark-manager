@@ -5,7 +5,7 @@
             <div class="new-link">
                 <% if current_user %>     
                     <p>Add a new bookmark</p> 
-                    <div id="new-link">
+                    <div id="new-link" class="link-form">
                         <form action="/links" method="post">
                             <span class="new-link-header">Url:</span><input class="text text-box" type="text" name="url" value="http://" onfocus="this.value = this.value;" required autofocus>
                             <span class="new-link-header">Title:</span><input class="text text-box" type="text" name="title" required>
