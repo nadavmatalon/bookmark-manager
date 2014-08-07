@@ -37,9 +37,10 @@ make it suitable for other browsers, it may not look as intended on other browse
 
 <h3>Testing</h3>
 
-<p>Tests were written with Rspec & Capybara.
+<p>Tests were written with Rspec & Capybara.</p>
 
-<p>To run the tests: $ rspec</p>
+<p>To run the tests in terminal: $ rspec</p>
 
 <p>Rspec version: 3.0.3</p>
 
+<p>Capibara version: 2.3.0</p>
