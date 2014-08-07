@@ -9,7 +9,7 @@ feature "User" do
 	end
 
 	scenario "cannot sign up with a password that doesn\'t match" do
-		lambda { sign_up('test@example.com', 'right', 'wrong') }.should change(User, :count).by(0) 
+		lambda { sign_up('test@example.com', 'password_a', 'password_b') }.should change(User, :count).by(0) 
 		expect(current_path).to eq('/users')
 		expect(page).to have_content("Password does not match the confirmation")
 	end
