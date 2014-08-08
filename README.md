@@ -57,7 +57,7 @@ the bottom.</p>
 <p>Please note that this app has been optimized primarily for <strong>Google Chrome</strong>, 
 and to a lesser extent <strong>Apple Safari</strong>. The app uses flexbox to display 
 various element, and despite my efforts to make it suitable for other browsers as well, 
-it may not look as intended on them.</p>
+it may not look as intended in them.</p>
 
 
 ##  Testing
