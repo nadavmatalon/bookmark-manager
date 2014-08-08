@@ -1,11 +1,11 @@
 get "/sessions/new" do
-	erb :"sessions/new"
+	erb :"sessions/new", layout: !request.xhr?
 end
 
 delete "/sessions" do
 	flash[:notice] = "Bye for now #{current_user.email}, thanks for visiting!"
 	session[:user_id] = nil
-	redirect to("/")
+    redirect to("/")
 end
 
 post '/sessions' do
@@ -14,7 +14,7 @@ post '/sessions' do
   	if user
   		flash[:errors] = []
     	session[:user_id] = user.id
-    	redirect to('/')
+        redirect to("/")
   	else
     	flash[:errors] = ["email or password are incorrect"]
     	erb :"sessions/new"

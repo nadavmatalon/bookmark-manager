@@ -364,7 +364,7 @@ div {
   	display: -ms-flexbox;
   	display: -webkit-flex;
   	display: -moz-box-flex;
-	padding-left: 50px;
+	padding-left: 72px;
 }
 
 .powered-by > p {
@@ -417,7 +417,7 @@ div {
   	display: -ms-flexbox;
   	display: -webkit-flex;
   	display: -moz-box-flex;
-	width: 60%;
+	width: 56%;
 	height: 90px;
 }
 
