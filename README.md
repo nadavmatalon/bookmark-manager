@@ -10,12 +10,19 @@
 
 ## App Screenshots
 
-![](public/images/screenshot.png "app_screenshot_1")
+![](public/images/app_screenshot_1.png "app_screenshot_1")
 
 <br/>
 
-![](public/images/screenshot.png "app_screenshot_2")
+![](public/images/app_screenshot_2.png "app_screenshot_2")
 
+
+<br/>
+
+![](public/images/app_screenshot_3.png "app_screenshot_3")
+
+
+<br/>
 
 ##  General Description
 
