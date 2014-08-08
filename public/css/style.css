@@ -218,6 +218,7 @@ div {
 }
 
 .sign-in-container {
+	margin-top: 45px;
 	height: 164px;
 	width: 50%;
 }
@@ -229,8 +230,9 @@ div {
 }
 
 .sign-up-container {
-	height: 164px;
+	height: 172px;
 	width: 65%;
+	margin-top: 45px;
 }
 
 .sign-up-container > p {

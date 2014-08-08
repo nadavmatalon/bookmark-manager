@@ -1,15 +1,32 @@
 <h1>Bookmark Manager</h1>
 
-<h3>Description</h3><br/>
+## Table of Contents
+
+* [App Screenshots](#app-screenshots)
+* [General Description](#general-description)
+* [Browser Caveate](#browser-caveate)
+* [Testing](#testing)
+
+
+## App Screenshots
+
+![](public/images/screenshot.png "app_screenshot_1")
+
+<br/>
+
+![](public/images/screenshot.png "app_screenshot_2")
+
+
+##  General Description
 
 <p><strong>Bookmark Manager</strong> is a simple Sinatra web application that allows users 
-to create a list of links to multiple websites (bookmarks) a categorize them according to 
-type or content via tags.</p>
+to create and save a list of links (or 'bookmarks') to various websites, as well as categorize 
+and filter them via tags.</p>
 
-<p>At the heart of the app is a postgresql database. The app itself was created as an exercise 
-in buiding a fully functional Sinatra web application while using TDD. As such, the app 
-comes with a comprehensive testing suite with integration and feature tests for all models 
-and webpages.</p> 
+<p>At the heart of the app is a postgresql database, whereas the front-end of the app was 
+created as an exercise in buiding a fully functional Sinatra web application in TDD. 
+As such, the app comes with a comprehensive testing suite with integration and feature 
+tests for all models and webpages.</p> 
 
 <p>The app includes a user management interface that allows users to sign up,
 sign in and sign out. In this context, various validations have been put in place, e.g.
@@ -28,7 +45,7 @@ to a specific tag. Both the list itself and the tags are ordered alphabetically.
 the bottom.</p>
 
 
-<h3>Browser Caveate</h3><br/>
+##  Browser Caveate
 
 <p>Please note that this app has been optimized primarily for <strong>Google Chrome</strong>, 
 and to a lesser extent <strong>Apple Safari</strong>. The app uses flexbox to display 
@@ -36,7 +53,7 @@ various element, and despite my efforts to make it suitable for other browsers a
 it may not look as intended on them.</p>
 
 
-<h3>Testing</h3><br/>
+##  Testing
 
 <p>Tests were written with Rspec & Capybara.</p>
 
