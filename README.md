@@ -26,7 +26,7 @@
 
 ##  General Description
 
-<p><strong>Bookmark Manager</strong> is a simple Sinatra web application that allows users 
+<p><strong>Bookmark Manager</strong> is a Sinatra web application which enables users 
 to create and save a list of links (or 'bookmarks') to various websites, as well as categorize 
 and filter them via tags.</p>
 
@@ -55,7 +55,7 @@ the bottom.</p>
 ##  Browser Caveate
 
 <p>Please note that this app has been optimized primarily for <strong>Google Chrome</strong>, 
-and to a lesser extent <strong>Apple Safari</strong>. The app uses flexbox to display 
+and to a lesser extent for <strong>Apple Safari</strong>. The app uses flexbox to display 
 various element, and despite my efforts to make it suitable for other browsers as well, 
 it may not look as intended in them.</p>
 
