@@ -5,8 +5,7 @@ end
 delete "/sessions" do
 	flash[:notice] = "Bye for now #{current_user.email}, thanks for visiting!"
 	session[:user_id] = nil
-  erb :index
-
+    redirect to("/")
 end
 
 post '/sessions' do
@@ -15,7 +14,7 @@ post '/sessions' do
   	if user
   		flash[:errors] = []
     	session[:user_id] = user.id
-      erb :index
+        redirect to("/")
   	else
     	flash[:errors] = ["email or password are incorrect"]
     	erb :"sessions/new"
