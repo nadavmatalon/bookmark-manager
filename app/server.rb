@@ -30,4 +30,3 @@ enable :sessions
 set :session_secret, "information"
 
 set :partial_template_engine, :erb
-
