@@ -30,7 +30,7 @@
 to create and save a list of links (or 'bookmarks') to various websites, as well as categorize 
 and filter them via tags.</p>
 
-<p>At the heart of the app is a postgresql database, whereas the front-end of the app was 
+<p>At the heart of the app is a postgresql database, while its front-end has been 
 created as an exercise in buiding a fully functional Sinatra web application in TDD. 
 As such, the app comes with a comprehensive testing suite with integration and feature 
 tests for all models and webpages.</p> 
