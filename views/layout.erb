@@ -12,18 +12,19 @@
             <%= yield %>
         </div>
         <%= partial :footer %>
-
-        <script>
-            var detector = document.createElement("detect");
-            detector.style.display = "flex";
-            if (detector.style.display === "flex") {
-                console.log("Flex is supported");
-            }
-            else
-            {
-                console.log("Flex is not supported");
-            }
-        </script>
+        <% if false %>
+            <script>
+                var detector = document.createElement("detect");
+                detector.style.display = "flex";
+                if (detector.style.display === "flex") {
+                    console.log("Flex is supported");
+                }
+                else
+                {
+                    console.log("Flex is not supported");
+                }
+            </script>
+        <% end %>
     </body>
  </html>
 

@@ -27,6 +27,6 @@ set :public_folder, Proc.new {File.join(root, '..', "public")}
 
 enable :sessions
 
-set :session_secret, "information"
+set :session_secret, ENV['SESSION_KEY'] || "information"
 
 set :partial_template_engine, :erb
