@@ -1,4 +1,4 @@
-#BOOKMARK MANAGER 
+#Bookmark Manager 
 
 ## Table of Contents
 
@@ -13,22 +13,22 @@
 
 <table>
 	<tr>
-		<td align="center" width="200px" >
+		<td align="center" width="190px" >
 			<a href="https://raw.githubusercontent.com/nadavmatalon/bookmark-manager/master/public/images/app_screenshot_3.png">
 				<img src="public/images/app_screenshot_3.png" height="105px" />
 				 Sign up
 			</a>
 		</td>
-		<td align="center" width="200px" >
+		<td align="center" width="190px" >
 			<a href="https://raw.githubusercontent.com/nadavmatalon/bookmark-manager/master/public/images/app_screenshot_1.png">
 				<img src="public/images/app_screenshot_1.png" height="105px" />
-				New Bookmark
+				New bookmark
 			</a>
 		</td>
-		<td align="center" width="200px" >
+		<td align="center" width="190px" >
 			<a href="https://raw.githubusercontent.com/nadavmatalon/bookmark-manager/master/public/images/app_screenshot_2.png">
 				<img src="public/images/app_screenshot_2.png" height="105px" />
-				Browse Bookmarks
+				Browse bookmarks
 			</a>
 		</td>
 	</tr>
