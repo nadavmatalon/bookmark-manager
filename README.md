@@ -1,30 +1,41 @@
-<h1>Bookmark Manager</h1>
+#BOOKMARK MANAGER 
 
 ## Table of Contents
 
-* [App Screenshots](#app-screenshots)
+* [Screenshots](#screenshots)
 * [General Description](#general-description)
-* [Browser Caveate](#browser-caveate)
+* [Browsers](#browsers)
 * [Testing](#testing)
+* [License](#license)
 
 
-## App Screenshots
+##Screenshots
 
-![](public/images/app_screenshot_1.png "app_screenshot_1")
+<table>
+	<tr>
+		<td align="center" width="200px" >
+			<a href="https://raw.githubusercontent.com/nadavmatalon/bookmark-manager/master/public/images/app_screenshot_3.png">
+				<img src="public/images/app_screenshot_3.png" height="105px" />
+				 Sign up
+			</a>
+		</td>
+		<td align="center" width="200px" >
+			<a href="https://raw.githubusercontent.com/nadavmatalon/bookmark-manager/master/public/images/app_screenshot_1.png">
+				<img src="public/images/app_screenshot_1.png" height="105px" />
+				New Bookmark
+			</a>
+		</td>
+		<td align="center" width="200px" >
+			<a href="https://raw.githubusercontent.com/nadavmatalon/bookmark-manager/master/public/images/app_screenshot_2.png">
+				<img src="public/images/app_screenshot_2.png" height="105px" />
+				Browse Bookmarks
+			</a>
+		</td>
+	</tr>
+</table>
 
-<br/>
 
-![](public/images/app_screenshot_2.png "app_screenshot_2")
-
-
-<br/>
-
-![](public/images/app_screenshot_3.png "app_screenshot_3")
-
-
-<br/>
-
-##  General Description
+##General Description
 
 <p><strong>Bookmark Manager</strong> is a Sinatra web application which enables users 
 to create and save a list of links (or 'bookmarks') to various websites, as well as categorize 
@@ -52,7 +63,7 @@ to a specific tag. Both the list itself and the tags are ordered alphabetically.
 the bottom.</p>
 
 
-##  Browser Caveate
+##Browsers
 
 <p>Please note that this app has been optimized primarily for <strong>Google Chrome</strong>, 
 and to a lesser extent for <strong>Apple Safari</strong>. The app uses flexbox to display 
@@ -62,10 +73,17 @@ it may not look as intended in them.</p>
 
 ##  Testing
 
-<p>Tests were written with Rspec & Capybara.</p>
+Tests were written with Rspec (2.14.8) & Capybara (2.3.0)<br>
 
-<p>To run the tests in terminal: $ rspec</p>
+The tests cover both back-end logic and front-end functionality.
 
-<p>Rspec version: 3.0.3</p>
+To run the tests in terminal:
 
-<p>Capibara version: 2.3.0</p>
+```bash
+$ rspec
+```
+
+##License
+
+<p>Released under the <a href="http://www.opensource.org/licenses/MIT">MIT license</a>.</p>
+
