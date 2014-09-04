@@ -11,7 +11,7 @@ gem "data_mapper", '~> 1.2.0'
 # https://github.com/datamapper/dm-postgres-adapter
 gem "dm-postgres-adapter", '~> 1.2.0'
 # https://github.com/codahale/bcrypt-ruby
-gem "bcrypt", '~> 3.1.7'
+gem "bcrypt"
 # https://github.com/nakajima/rack-flash
 gem "rack-flash3", '~> 1.0.5'
 # https://github.com/macournoyer/thin/
