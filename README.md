@@ -4,6 +4,7 @@
 
 * [Screenshots](#screenshots)
 * [General Description](#general-description)
+* [See it Live on Heroku](#see-it-live-on-heroku)
 * [Browsers](#browsers)
 * [Testing](#testing)
 * [License](#license)
@@ -63,12 +64,25 @@ to a specific tag. Both the list itself and the tags are ordered alphabetically.
 the bottom.</p>
 
 
+##See it Live on Heroku
+
+A live version of the app can be found at:
+
+http://makers-bookmark-manager.herokuapp.com/
+
+As I'm using Heroku's free hosting service, the app may take a bit of time to upload<br/>
+(Heroku's giros take time to wake up...), so please be patient.
+
+
 ##Browsers
 
-<p>Please note that this app has been optimized primarily for <strong>Google Chrome</strong>, 
-and to a lesser extent for <strong>Apple Safari</strong>. The app uses flexbox to display 
-various element, and despite my efforts to make it suitable for other browsers as well, 
-it may not look as intended in them.</p>
+This app has been tested with and supports the following browsers:
+
+* __Google Chrome__ (36.0)
+* __Apple Safari__ (7.0.5)
+
+The app uses flexbox to display various element, and despite my efforts to make 
+it suitable for other browsers as well, it may not look as intended in them.</p>
 
 
 ##  Testing
