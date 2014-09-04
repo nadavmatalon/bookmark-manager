@@ -44,7 +44,9 @@
 				<% if link.tags != [] %>
 					<% @tags_array = link.tags.sort_by {|tag| tag.text } %>
 						<% @tags_array.each do |tag| %>
-						<span class="tag"><a href=<%= "/tags/#{tag[:text]}" %>><%= tag[:text] %></a></span>
+						<% tag_name = tag.text.downcase %>
+						<% tag_name = tag_name.gsub(/\s+/, '_') if tag.text.include?(' ') %>	
+						<span class="tag"><a href=<%= "/tags/#{tag_name}" %>><%= tag[:text] %></a></span>
 					<% end%>	
 				<% end %>
 			</div>
