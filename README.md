@@ -81,8 +81,9 @@ This app has been tested with and supports the following browsers:
 * __Google Chrome__ (36.0)
 * __Apple Safari__ (7.0.5)
 
-The app uses flexbox to display various element, and despite my efforts to make 
-it suitable for other browsers as well, it may not look as intended in them.</p>
+The app uses [Flexbox](http://philipwalton.github.io/solved-by-flexbox/) to 
+display various element, and despite my efforts to make 
+it suitable for other browsers as well, it may not look as intended in them.
 
 
 ##  Testing
