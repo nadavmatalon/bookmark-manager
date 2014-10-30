@@ -89,6 +89,30 @@ As I'm using Heroku's free hosting service, the app may take a bit of time to up
 
 ##How to Install Locally
 
+__Important Note:__  [postgreSQL](http://www.postgresql.org) must be installed for the 
+app to work.
+
+To install the app, __clone the repo__ to a local folder and then run the 
+following commands in terminal to create the databases (test &amp; development) 
+and run the local server:
+
+```bash
+$> cd bookmark-manager
+$> bundle install
+$> psql
+##> CREATE DATABASE "bookmark_manager_test";
+##> CREATE DATABASE "bookmark_manager_development";
+##> \q
+$> rake auto_migrate
+$> thin start
+```
+
+After running these setup commands, open the browser of your choice and go to this address:
+
+```
+http://localhost:3000/
+```
+
 
 ##Browser Compatibility
 
