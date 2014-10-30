@@ -31,12 +31,12 @@
 		<div class="seperator"></div>
 	<% end%>
 	<% if @links != [] && @links != nil %>
-	  	<% @links.each do |link| %>
+		<% @links.each do |link| %>
 			<div class="new-link">
-		    	<p class="saved-link-title-margin link-title"><a href="<%= link.url %>"><%= link.title %></a></p>
+				<p class="saved-link-title-margin link-title"><a href="<%= link.url %>"><%= link.title %></a></p>
 				<% if link.tags != [] %>
 					<% @tags_array = link.tags.sort_by {|tag| tag.text } %>
-						<% @tags_array.each do |tag| %>
+					<% @tags_array.each do |tag| %>
 						<% tag_name = tag.text.downcase %>
 						<% tag_name = tag_name.gsub(/\s+/, '_') if tag.text.include?(' ') %>	
 						<span class="tag"><a href=<%= "/tags/#{tag_name}" %>><%= tag[:text] %></a></span>
