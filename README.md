@@ -96,7 +96,7 @@ To install the app, __clone the repo__ to a local folder and then run the
 following commands in terminal to create the databases (test &amp; development) 
 and run the local server:
 
-```bash
+```
 $> cd bookmark-manager
 $> bundle install
 $> psql
