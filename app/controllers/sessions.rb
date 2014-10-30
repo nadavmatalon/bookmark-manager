@@ -3,8 +3,8 @@ get "/sessions/new" do
 end
 
 delete "/sessions" do
-	flash[:notice] = "Bye for now #{current_user.email}, thanks for visiting!"
-	session[:user_id] = nil
+    flash[:notice] = "Bye for now #{current_user.email}, thanks for visiting!"
+    session[:user_id] = nil
     redirect to("/")
 end
 
