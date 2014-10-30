@@ -1,5 +1,4 @@
 <div class="link-list">
-
        <div class="new-link-container">
             <div class="seperator"></div>
             <div class="new-link">
@@ -18,7 +17,6 @@
                 <% end %> 
             </div>
         </div>
-
 	<% if @filtered_list %>	
 		<div class="new-link all-links">
 			<p id="filter-title">
@@ -30,16 +28,11 @@
 				<a href='/' id='show-all-links' class='show-all-links-button'>Show all</a>
 			</div>
 		</div>
-		<div class="seperator">
-		</div>
+		<div class="seperator"></div>
 	<% end%>
-
 	<% if @links != [] && @links != nil %>
-
 	  	<% @links.each do |link| %>
-
 			<div class="new-link">
-
 		    	<p class="saved-link-title-margin link-title"><a href="<%= link.url %>"><%= link.title %></a></p>
 				<% if link.tags != [] %>
 					<% @tags_array = link.tags.sort_by {|tag| tag.text } %>
@@ -50,18 +43,13 @@
 					<% end%>	
 				<% end %>
 			</div>
-
-			<div class="seperator">
-			</div>
-
+			<div class="seperator"></div>
 		<% end %>
-
 	<% else %>
 		<div class="new-link">
 			<p class="new-link-message">No bookmarks yet</p>
 		</div>
-		<div class="seperator">
-		</div>
+		<div class="seperator"></div>
 	<% end %>
 </div>
 
