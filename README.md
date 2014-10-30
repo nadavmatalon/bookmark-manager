@@ -93,8 +93,7 @@ __Important Note:__  [postgreSQL](http://www.postgresql.org) must be installed f
 app to work.
 
 To install the app, __clone the repo__ to a local folder and then run the 
-following commands in terminal to create the databases (test &amp; development) 
-and run the local server:
+following commands in terminal to create the databases (test &amp; development):
 
 ```
 $> cd bookmark-manager
@@ -104,6 +103,24 @@ $> psql
 ##> CREATE DATABASE "bookmark_manager_development";
 ##> \q
 $> rake auto_migrate
+```
+
+Then you'll need to create an __evniromental variable__
+in your machine called: BOOKMARK_SECRET for the session secret key.
+
+You can give this variable any value you wish.
+
+If you want a random string for this variable, you can 
+use the following commands in terminal to generate it:
+
+```
+$> irb
+#> SecureRandom.hex(20)
+$> exit
+```
+Finally, run the local server:
+
+```
 $> thin start
 ```
 
