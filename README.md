@@ -105,12 +105,13 @@ $> psql
 $> rake auto_migrate
 ```
 
-Then you'll need to create an __evniromental variable__
-in your machine called: BOOKMARK_SECRET for the session secret key.
+Then you'll need to create an __enviromental variable__
+in your machine for the `session secret key`.
 
-You can give this variable any value you wish.
+The name of this env variable should be: BOOKMARK_SECRET, and you 
+can give it any value you like.
 
-If you want a random string for this variable, you can 
+If you want a random string for this variable's value, you can 
 use the following commands in terminal to generate it:
 
 ```
