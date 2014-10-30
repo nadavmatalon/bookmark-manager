@@ -1,11 +1,14 @@
 #Bookmark Manager 
 
+[![Code Climate](https://codeclimate.com/github/nadavmatalon/bookmark-manager/badges/gpa.svg)](https://codeclimate.com/github/nadavmatalon/bookmark-manager)
+
 ## Table of Contents
 
 * [Screenshots](#screenshots)
 * [General Description](#general-description)
 * [See it Live on Heroku](#see-it-live-on-heroku)
-* [Browsers](#browsers)
+* [How to install Locally](#how-to-install-locally)
+* [Browser Compatibility](#browser-compatibility)
 * [Testing](#testing)
 * [License](#license)
 
@@ -38,43 +41,56 @@
 
 ##General Description
 
-<p><strong>Bookmark Manager</strong> is a Sinatra web application which enables users 
-to create and save a list of links (or 'bookmarks') to various websites, as well as categorize 
-and filter them via tags.</p>
+__Bookmark Manager__ is a [Sinatra](http://www.sinatrarb.com) web app 
+written in [Ruby](https://www.ruby-lang.org/en/) (2.1.1) according to 
+[TDD](http://en.wikipedia.org/wiki/Test-driven_development)
+(testing done with [Rspec](http://rspec.info/) &amp; 
+[Capybara](https://github.com/jnicklas/capybara)), 
+during week 5 of the course at [Makers Academy](http://www.makersacademy.com/).
 
-<p>At the heart of the app is a postgresql database, while its front-end has been 
-created as an exercise in buiding a fully functional Sinatra web application in TDD. 
-As such, the app comes with a comprehensive testing suite with integration and feature 
-tests for all models and webpages.</p> 
+The app uses a [postgreSQL](http://www.postgresql.org) database to store data.
 
-<p>The app includes a user management interface that allows users to sign up,
-sign in and sign out. In this context, various validations have been put in place, e.g.
-verification of correct email format, email uniqueness, password length, and so forth.</p>
+__Bookmark Manager__ enables users 
+to create and save a list of links (or 'bookmarks') to various websites, 
+as well as categorize and filter them via tags.
 
-<p>Registered users can add new bookmarks to the list, while un-registered visitors can only 
-view its corrent content.</p>
+The [postgreSQL](http://www.postgresql.org) database holds the information needed for 
+the user management interface (sign up, sign in and sign out). 
+In this context, various validations have been put in place, e.g. 
+verification of correct email format, email uniqueness, password length, and so forth.
 
-<p>When adding a new bookmark, the user is prompted to provide a url address, a title, as well as
-optional tags for indexing purposes.</p>
+The database also holds all the 'bookmarks' data (i.e. link-names, urls and tags). 
 
-<p>The list itself can be viewed in its entirety (the defualt), or it can be filtered according
-to a specific tag. Both the list itself and the tags are ordered alphabetically.</p>
+Registered users can add new bookmarks to the list, while un-registered users can only 
+browse its corrent content.
 
-<p>In visual terms, the site includes a 'sticky' navigation bar at the top, and a 'sticky' footer at
-the bottom.</p>
+When adding a new bookmark, the user is prompted to provide a url address, a title, as well as
+optional tags for indexing purposes.
+
+The list itself can be viewed in its entirety (the defualt), or it can be filtered according
+to a specific tag. Both the list itself and the tags are ordered alphabetically.
+
+In visual terms, the site includes a 'sticky' navigation bar at the top, and a 'sticky' footer at
+the bottom.
+
+Clicking on a particular tab in the list of bookmarks changes the view to show only 
+bookmarks that share the selected tag.
 
 
 ##See it Live on Heroku
 
 A live version of the app can be found at:
 
-http://makers-bookmark-manager.herokuapp.com/
+[Bookmark-Manager on Heroku](http://makers-bookmark-manager.herokuapp.com/)
 
-As I'm using Heroku's free hosting service, the app may take a bit of time to upload<br/>
+As I'm using Heroku's free hosting service, the app may take a bit of time to upload  
 (Heroku's giros take time to wake up...), so please be patient.
 
 
-##Browsers
+##How to Install Locally
+
+
+##Browser Compatibility
 
 This app has been tested with and supports the following browsers:
 
@@ -88,14 +104,16 @@ it suitable for other browsers as well, it may not look as intended in them.
 
 ##  Testing
 
-Tests were written with Rspec (2.14.8) & Capybara (2.3.0)<br>
+Tests were written with [Rspec](http://rspec.info/) (2.14.8) &amp; 
+[Capybara](https://github.com/jnicklas/capybara) (2.3.0).
 
 The tests cover both back-end logic and front-end functionality.
 
 To run the tests in terminal:
 
 ```bash
-$ rspec
+$> cd bookmark-manager
+$> rspec
 ```
 
 ##License
